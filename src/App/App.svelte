@@ -11,17 +11,17 @@
     import '@material/mwc-snackbar';
     import downloadToClient from 'file-saver';
     import Dropzone from "svelte-file-dropzone";
-    import Worksheet from "../components/Worksheet";
-    import getNewWorksheet, {validateWorksheet} from "../model/worksheet";
+    import CharacterSheet from "../components/CharacterSheet";
+    import getNewCharacterSheet, {validateCharacterSheet} from "../model/character";
     import LocalStorageRepository from '../repository/localStorageRepository';
-    import {applicationName, fileExtension, worksheetPrefix, worksheetSuffix} from '../applicationSettings'
+    import {applicationName, fileExtension, storagePrefix, storageSuffix, sheetName} from '../applicationSettings'
 
     import About from '../components/About/About.md';
 
     let activeIndex;
 
     let snackBarElement, tabBarElement;
-
+    let characterSheet;//= getNewCharacterSheet();
     let disabled = "";
     let showLoadPane = false;
     let firstCall = true;
@@ -29,63 +29,66 @@
     let ls;
 
     let snackBarText = 'Replace this with a real message';
-    let app_name="",file_ext="", prefix="", suffix="";
+    let app_name="",file_ext="", prefix="", suffix="", wks_name="";
+    const unsubscribe_wks_name= sheetName.subscribe(value => {
+        wks_name = value;
+    });
     const unsubscribe_name = applicationName.subscribe(value => {
         app_name = value;
     });
     const unsubscribe_ext= fileExtension.subscribe(value => {
         file_ext = value;
     });
-    const unsubscribe_prefix= worksheetPrefix.subscribe(value => {
+    const unsubscribe_prefix= storagePrefix.subscribe(value => {
         prefix = value;
         ls=new LocalStorageRepository(prefix);
     });
-    const unsubscribe_suffix= worksheetSuffix.subscribe(value => {
+    const unsubscribe_suffix= storageSuffix.subscribe(value => {
         suffix = value;
     });
 
-    let {tempWorksheet, isValid} = doInitialWorksheetLoad();
+    let {sheet, isValid} = doInitialLoad();
 
-    let worksheet = isValid ? tempWorksheet : getNewWorksheet();
+    characterSheet = isValid ? sheet : getNewCharacterSheet();
 
     scheduleAutosave();
 
-    function doInitialWorksheetLoad() {
-        let tempWorksheet;
+    function doInitialLoad() {
+        let temp;
         let isValid = false;
         try {
 
-            tempWorksheet = ls.load(suffix,getNewWorksheet);
-            isValid = validateWorksheet(tempWorksheet);
+            temp = ls.load(suffix,getNewCharacterSheet);
+            isValid = validateCharacterSheet(temp);
         } catch (err){
             console.log(err);
             isValid = false;
         }
-        return {tempWorksheet, isValid};
+        return {sheet: temp, isValid};
     }
 
-    function handleSaveWorksheetClicked() {
-        let blob = new Blob([JSON.stringify(worksheet, null, 2)], {type: 'text/plain;charset=utf-8'});
-        ls.save(suffix,worksheet);
-        showSnackBar('Worksheet saved to local storage.');
+    function handleSaveClicked() {
+        let blob = new Blob([JSON.stringify(characterSheet, null, 2)], {type: 'text/plain;charset=utf-8'});
+        ls.save(suffix,characterSheet);
+        showSnackBar('Character sheet saved to local storage.');
         if (saveAlsoDownloads) {
             setTimeout(() => {
-                let fileName = `${worksheet.name}.${file_ext}`;
+                let fileName = `${characterSheet.characterData.name}.${file_ext}`;
                 downloadToClient(blob, fileName);
                 showSnackBar(`Sending file: ${fileName}. Check your downloads folder.`);
             }, 2000);
         }
     }
 
-    function handleLoadWorksheetClicked() {
+    function handleLoadClicked() {
         showLoadPane = true;
         disabled = 'disabled';
     }
 
-    function handleNewWorksheetClicked() {
-        gameWorksheet = getNewWorksheet();
+    function handleNewClicked() {
+        characterSheet = getNewCharacterSheet();
         activeIndex = 0;
-        showSnackBar('Created a new worksheet.');
+        showSnackBar('Created a new character sheet.');
     }
 
     function handleFilesSelect(e) {
@@ -95,10 +98,10 @@
             // e.target.result should contain the text
             try {
                 let text = e.target.result;
-                let worksheet = JSON.parse(text);
-                if (validateWorksheet(worksheet)) {
-                    setTimeout(() => showSnackBar("Worksheet loaded."), 250);
-                    gameWorksheet = worksheet;
+                let tempCharacterSheet = JSON.parse(text);
+                if (validateCharacterSheet(tempCharacterSheet)) {
+                    setTimeout(() => showSnackBar("Character sheet loaded."), 250);
+                    characterSheet = tempCharacterSheet;
                     activeIndex = 0;
                 }
             } catch (err) {
@@ -129,7 +132,7 @@
             return;
         }
         firstCall = false;
-        setInterval(() => ls.save(suffix,worksheet), 5 * 1000);
+        setInterval(() => ls.save(suffix,characterSheet), 5 * 1000);
     }
 
     function showSnackBar(text) {
@@ -158,18 +161,18 @@
         <div slot="title"><span>{app_name}</span></div>
         <mwc-tab-bar slot="actionItems" style="display: inline-block" bind:this={tabBarElement}
                      activeIndex={activeIndex} on:MDCTabBar:activated={handleTabActivated}>
-            <mwc-tab label="Worksheet"></mwc-tab>
+            <mwc-tab label="{wks_name}"></mwc-tab>
             <mwc-tab label="About"></mwc-tab>
         </mwc-tab-bar>
-        <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewWorksheetClicked}
+        <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewClicked}
                          {disabled}></mwc-icon-button>
         {#if showLoadPane}
             <mwc-icon-button icon="cancel" slot="actionItems" on:click={hideLoadPane}></mwc-icon-button>
         {:else}
             <mwc-icon-button icon="folder_open" slot="actionItems"
-                             on:click={handleLoadWorksheetClicked}></mwc-icon-button>
+                             on:click={handleLoadClicked}></mwc-icon-button>
         {/if}
-        <mwc-icon-button icon="save" slot="actionItems" on:click={handleSaveWorksheetClicked}
+        <mwc-icon-button icon="save" slot="actionItems" on:click={handleSaveClicked}
                          {disabled}></mwc-icon-button>
         <mwc-icon-button icon="print" slot="actionItems" on:click={handlePrintClicked} {disabled}></mwc-icon-button>
         {#if (showLoadPane)}
@@ -180,7 +183,7 @@
         {:else}
             <div id="content" style="padding:0">
                 {#if activeIndex === 0}
-                    <Worksheet bind:worksheet={worksheet}/>
+                    <CharacterSheet bind:characterSheet={characterSheet}/>
                 {:else if activeIndex === 1}
                     <About />
                 {:else}
@@ -201,6 +204,6 @@
          to HTML if you like, but you'll need to ensure it's been rendered right before the print dialog is invoked.
          (i.e. print() )
      -->
-    <Worksheet bind:gameWorksheet={worksheet}/>
+    <CharacterSheet bind:characterSheet={characterSheet}/>
 
 </main>

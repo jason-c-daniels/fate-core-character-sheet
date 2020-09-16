@@ -1,5 +1,5 @@
 {
-  "name": "fate-game-creation-worksheet",
+  "name": "fate-core-character-sheet",
   "version": "0.0.1",
   "scripts": {
     "build": "rollup -c",

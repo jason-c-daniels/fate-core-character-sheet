@@ -1,0 +1,60 @@
+:root {
+    --logo-height: 120px;
+    --logo-width: 280px;
+    --logo-bar-bottom-padding: 1rem;
+    --info-width: calc(100% - var(--logo-width));
+    --info-bar-height: calc(var(--logo-height) + var(--logo-bar-bottom-padding));
+}
+
+.logo {
+    height: var(--logo-height);
+    width: var(--logo-width);
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.logo,
+h2 {
+    display: inline-block;
+    margin: 0;
+}
+
+h2 {
+    margin-top: 0.9rem;
+}
+
+
+.desc {
+    margin-top: 0.5rem;
+    resize: none;
+    height: calc( ( var(--info-bar-height) - 3rem) *0.64);
+}
+
+.refresh {
+    margin-left: 0.5rem;
+    height: calc( var(--info-bar-height) - 3rem);
+    width: calc( var(--info-bar-height) - 3rem);
+    border-style: solid;
+    border-width: 2pt;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border-color: var(--input-border-color)
+}
+
+.refresh label {
+    color: var(--input-border-color);
+}
+
+.refresh input {
+    height: calc( var(--info-bar-height) - 4.4rem);
+    width: calc( var(--info-bar-height) - 3.4rem);
+}
+
+
+.info-bar {
+    display: flex;
+    flex-direction: row;
+    height: var(--info-bar-height);
+    padding-bottom: var(--logo-bar-bottom-padding);
+    width: 100%;
+}

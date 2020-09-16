@@ -3,7 +3,7 @@
 </style>
 
 <script>
-
+    export let aspects={};
 </script>
 
 <!--

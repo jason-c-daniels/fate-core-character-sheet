@@ -35,12 +35,22 @@
             );
 }
 
-.header span {
+.title {
     box-sizing: border-box;
-    display: block;
+    display: inline-block;
     height: var(--header-span-height);
     width: 100%;
     font-weight: 900;
+    margin-bottom: 0.3rem;
+    margin-top: -0.1rem;
+}
+
+.subtitle {
+    box-sizing: border-box;
+    font-size: calc( var(--header-font-height) * 0.75);
+    display: inline-block;
+    height: var(--header-span-height);
+    font-weight: 500;
     margin-bottom: 0.3rem;
     margin-top: -0.1rem;
 }

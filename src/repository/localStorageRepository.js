@@ -1,5 +1,5 @@
 import localStorage from 'local-storage'
-const worksheetPrefix="fate-worksheet-";
+const worksheetPrefix="fate-core-character-sheet-";
 export default class LocalStorageRepository {
     prefix=worksheetPrefix;
     constructor(

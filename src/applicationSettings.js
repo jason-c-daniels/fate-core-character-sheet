@@ -1,16 +1,16 @@
 import {writable} from 'svelte/store';
 
 //TODO:
-export const applicationName = writable("[Your Application Name Here]" );
+export const applicationName = writable("Fate Core Character Sheet" );
 
 //TODO:
-export const worksheetName = writable("[Your Worksheet Name Here]" );
+export const sheetName = writable("Character Sheet" );
 
 // TODO: pick a meaningful file extension for 'downloaded' files.
-export const fileExtension = writable("fcwks");
+export const fileExtension = writable("fcchar");
 
 //TODO:
-export const worksheetSuffix = writable("worksheet-suffix");
+export const storageSuffix = writable("character-data");
 
 //TODO: pick a suitable prefix, by convention it should end in a dash "-"
-export const worksheetPrefix = writable("fate-core-worksheet-app-prefix-");
+export const storagePrefix = writable("fate-core-character-sheet-");
