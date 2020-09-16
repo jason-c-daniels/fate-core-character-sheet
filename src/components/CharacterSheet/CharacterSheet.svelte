@@ -19,13 +19,13 @@
 
 <div class="page" >
     <BasicInfo bind:characterData={characterSheet.characterData}/>
-    <div class="flex-row" style="width: 100%">
+    <div class="flex-row" style="width: 100%; margin-bottom: 1rem;">
         <Aspects bind:aspects={characterSheet.characterData.aspects}/>
         <Skills bind:skills={characterSheet.characterData.skills}/>
     </div>
-    <div class="flex-row" style="width: 100%">
-        <Extras bind:value={characterSheet.characterData.extras}/>
-        <Stunts bind:value={characterSheet.characterData.stunts}/>
+    <div class="flex-row" style="width: 100%; margin-bottom: 1rem;">
+        <Extras bind:value={characterSheet.characterData.extras} rows="10"/>
+        <Stunts bind:value={characterSheet.characterData.stunts} rows="10"/>
     </div>
     <Vitals bind:vitals={characterSheet.characterData.vitals}/>
 </div>

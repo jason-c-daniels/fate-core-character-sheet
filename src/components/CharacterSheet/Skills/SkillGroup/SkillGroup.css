@@ -1,0 +1,20 @@
+
+div {
+    flex-wrap: nowrap;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+input {
+    margin-left: 0.25rem;
+    width: 100%;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    padding-top: 0.2rem;
+    width:100%;
+    font-weight: bold;
+    color: var(--input-border-color)
+}

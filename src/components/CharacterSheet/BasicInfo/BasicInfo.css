@@ -38,7 +38,13 @@ h2 {
     border-width: 2pt;
     flex-shrink: 0;
     flex-grow: 0;
-    border-color: var(--input-border-color)
+    border-color: var(--input-border-color);
+}
+
+.refresh input {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 .refresh label {
