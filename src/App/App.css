@@ -1,0 +1,34 @@
+main {
+    text-align: left;
+    padding: 0;
+    margin: 0 0;
+}
+
+.file-loader div {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.file-loader {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    font-size: 18pt;
+    text-align: center;
+    vertical-align: center;
+}
+
+.file-loader div,
+.file-loader div p {
+    display: block;
+    height: 100vh;
+    width: 100%;
+}
+
+mwc-tab-bar {
+    --mdc-theme-primary: var(--mdc-theme-text-primary-on-dark);
+    --mdc-text-transform: none;
+    --mdc-tab-color-default: var(--mdc-theme-text-primary-on-dark);
+    --mdc-tab-text-label-color-default: var(--mdc-theme-text-primary-on-dark);
+}

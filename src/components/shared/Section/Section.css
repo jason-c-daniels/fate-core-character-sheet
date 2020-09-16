@@ -1,0 +1,59 @@
+:root {
+    --header-font-height: 1.5rem;
+    --header-span-height: calc(var(--header-font-height) * 5 / 6);
+    --header-padding-top: 0; /*calc(var(--header-font-height) * 1 / 6 - 2);*/
+}
+
+.section {
+    height: auto;
+    display: block;
+}
+
+.header {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: var(--header-font-height);
+    background-color: var(--header-primary-background-color);
+    color: var(--header-primary-color);
+    text-align: left;
+    height: auto;
+    overflow: hidden;
+    padding-top: 0;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    --notchSize: 9px;
+
+    clip-path:
+            polygon(
+                    0% var(--notchSize),                  /*UL*/
+                    var(--notchSize) 0%,
+                    100%  0%,     /*UR*/
+                    100%  0%,
+                    100% calc(100% - var(--notchSize)),   /*LR*/
+                    calc(100% - var(--notchSize)) 100%,
+                    0% 100%,                /*LL*/
+                    0% 100%
+            );
+}
+
+.header span {
+    box-sizing: border-box;
+    display: block;
+    height: var(--header-span-height);
+    width: 100%;
+    font-weight: 900;
+    margin-bottom: 0.3rem;
+    margin-top: -0.1rem;
+}
+
+.hint {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.5rem;
+    display: block;
+    text-align: justify;
+    margin-bottom: 5pt;
+}
+
+.content {
+    padding: 0;
+    margin: 0;
+}

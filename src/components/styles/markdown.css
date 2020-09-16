@@ -1,0 +1,21 @@
+* {
+    line-height: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+h1,h2,h3,h4 {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+p {
+    margin-bottom: 0.5rem;
+    text-indent: 1.1rem;
+    line-height: 1.3rem;
+}
+
+li,ol {
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+}
