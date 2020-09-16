@@ -21,7 +21,7 @@
     let activeIndex;
 
     let snackBarElement, tabBarElement;
-    let characterSheet;//= getNewCharacterSheet();
+    let characterSheet;
     let disabled = "";
     let showLoadPane = false;
     let firstCall = true;
