@@ -1,0 +1,29 @@
+.toc {
+    padding: 0.5rem;
+    float: left;
+    position: fixed;
+    top:3.5rem;
+    left:0;
+    width:auto;
+    max-width: 20rem;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    background-color: var(--mdc-theme-surface);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.page-content {
+    height: calc(100vh - 6rem);
+    overflow: auto;
+    margin:0;
+}
+
+.this-page {
+    width: 8.5in;
+    height: auto;
+    padding: 0.5in;
+    margin: 0.5in auto;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+}

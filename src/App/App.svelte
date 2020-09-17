@@ -17,6 +17,7 @@
     import {applicationName, fileExtension, storagePrefix, storageSuffix, sheetName} from '../applicationSettings'
 
     import About from '../components/About/About.md';
+    import SRD from "../components/SRD/SRD.svelte";
 
     let activeIndex;
 
@@ -29,21 +30,21 @@
     let ls;
 
     let snackBarText = 'Replace this with a real message';
-    let app_name="",file_ext="", prefix="", suffix="", wks_name="";
-    const unsubscribe_wks_name= sheetName.subscribe(value => {
+    let app_name = "", file_ext = "", prefix = "", suffix = "", wks_name = "";
+    const unsubscribe_wks_name = sheetName.subscribe(value => {
         wks_name = value;
     });
     const unsubscribe_name = applicationName.subscribe(value => {
         app_name = value;
     });
-    const unsubscribe_ext= fileExtension.subscribe(value => {
+    const unsubscribe_ext = fileExtension.subscribe(value => {
         file_ext = value;
     });
-    const unsubscribe_prefix= storagePrefix.subscribe(value => {
+    const unsubscribe_prefix = storagePrefix.subscribe(value => {
         prefix = value;
-        ls=new LocalStorageRepository(prefix);
+        ls = new LocalStorageRepository(prefix);
     });
-    const unsubscribe_suffix= storageSuffix.subscribe(value => {
+    const unsubscribe_suffix = storageSuffix.subscribe(value => {
         suffix = value;
     });
 
@@ -58,9 +59,9 @@
         let isValid = false;
         try {
 
-            temp = ls.load(suffix,getNewCharacterSheet);
+            temp = ls.load(suffix, getNewCharacterSheet);
             isValid = validateCharacterSheet(temp);
-        } catch (err){
+        } catch (err) {
             console.log(err);
             isValid = false;
         }
@@ -69,7 +70,7 @@
 
     function handleSaveClicked() {
         let blob = new Blob([JSON.stringify(characterSheet, null, 2)], {type: 'text/plain;charset=utf-8'});
-        ls.save(suffix,characterSheet);
+        ls.save(suffix, characterSheet);
         showSnackBar('Character sheet saved to local storage.');
         if (saveAlsoDownloads) {
             setTimeout(() => {
@@ -132,7 +133,7 @@
             return;
         }
         firstCall = false;
-        setInterval(() => ls.save(suffix,characterSheet), 5 * 1000);
+        setInterval(() => ls.save(suffix, characterSheet), 5 * 1000);
     }
 
     function showSnackBar(text) {
@@ -162,6 +163,7 @@
         <mwc-tab-bar slot="actionItems" style="display: inline-block" bind:this={tabBarElement}
                      activeIndex={activeIndex} on:MDCTabBar:activated={handleTabActivated}>
             <mwc-tab label="{wks_name}"></mwc-tab>
+            <mwc-tab label="SRD"></mwc-tab>
             <mwc-tab label="About"></mwc-tab>
         </mwc-tab-bar>
         <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewClicked}
@@ -185,6 +187,8 @@
                 {#if activeIndex === 0}
                     <CharacterSheet bind:characterSheet={characterSheet}/>
                 {:else if activeIndex === 1}
+                    <SRD />
+                {:else if activeIndex === 2}
                     <About />
                 {:else}
                     <div class="page">

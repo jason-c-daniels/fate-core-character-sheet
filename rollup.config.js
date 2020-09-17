@@ -44,7 +44,9 @@ export default {
 		svelte({
 			extensions: ['.svelte','.md'],
 			preprocess: [
-				markdown(),
+				markdown({
+					headerIds: true
+				}),
 				sveltePreprocess({postcss: true}),
 
 			],
