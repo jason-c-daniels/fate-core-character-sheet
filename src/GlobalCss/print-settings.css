@@ -1,27 +1,4 @@
 @media print {
-    ::-webkit-input-placeholder {
-        /* WebKit browsers */
-        color: transparent;
-    }
-
-    :-moz-placeholder {
-        /* Mozilla Firefox 4 to 18 */
-        color: transparent;
-    }
-
-    ::-moz-placeholder {
-        /* Mozilla Firefox 19+ */
-        color: transparent;
-    }
-
-    :-ms-input-placeholder {
-        /* Internet Explorer 10+ */
-        color: transparent;
-    }
-
-    input::placeholder {
-        color: transparent;
-    }
 
     /* hide the spinners when printing. */
     /* Chrome, Safari, Edge, Opera */
@@ -34,42 +11,6 @@
     /* Firefox */
     input[type="number"] {
         -moz-appearance: textfield;
-    }
-
-    ::-webkit-input-placeholder {
-        /* WebKit browsers */
-        color: transparent;
-    }
-    :-moz-placeholder {
-        /* Mozilla Firefox 4 to 18 */
-        color: transparent;
-    }
-    ::-moz-placeholder {
-        /* Mozilla Firefox 19+ */
-        color: transparent;
-    }
-    :-ms-input-placeholder {
-        /* Internet Explorer 10+ */
-        color: transparent;
-    }
-    textarea::-webkit-input-placeholder {
-        /* WebKit browsers */
-        color: transparent;
-    }
-    textarea:-moz-placeholder {
-        /* Mozilla Firefox 4 to 18 */
-        color: transparent;
-    }
-    textarea::-moz-placeholder {
-        /* Mozilla Firefox 19+ */
-        color: transparent;
-    }
-    textarea:-ms-input-placeholder {
-        /* Internet Explorer 10+ */
-        color: transparent;
-    }
-    textarea::placeholder {
-        color: transparent;
     }
 
     .noprint {
@@ -91,7 +32,6 @@
         padding:0 !important;
         box-sizing: border-box !important;
     }
-
 }
 
 @page {

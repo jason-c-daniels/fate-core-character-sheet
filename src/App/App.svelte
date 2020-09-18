@@ -14,10 +14,11 @@
     import CharacterSheet from "../components/CharacterSheet";
     import getNewCharacterSheet, {validateCharacterSheet} from "../model/character";
     import LocalStorageRepository from '../repository/localStorageRepository';
-    import {applicationName, fileExtension, storagePrefix, storageSuffix, sheetName} from '../applicationSettings'
+    import {applicationName, fileExtension, storagePrefix, storageSuffix, sheetName, dials} from '../applicationSettings'
 
     import About from '../components/About/About.md';
     import SRD from "../components/SRD/SRD.svelte";
+
 
     let activeIndex;
 
@@ -28,7 +29,7 @@
     let firstCall = true;
     let saveAlsoDownloads = true;
     let ls;
-
+    let these_dials;
     let snackBarText = 'Replace this with a real message';
     let app_name = "", file_ext = "", prefix = "", suffix = "", wks_name = "";
     const unsubscribe_wks_name = sheetName.subscribe(value => {
@@ -47,10 +48,14 @@
     const unsubscribe_suffix = storageSuffix.subscribe(value => {
         suffix = value;
     });
-
+    const unsubscribe_dials = dials.subscribe(value => {
+        these_dials = value;
+        if (!!characterSheet) { characterSheet.dials=these_dials;}
+    });
     let {sheet, isValid} = doInitialLoad();
 
     characterSheet = isValid ? sheet : getNewCharacterSheet();
+    dials.set(characterSheet.dials);
 
     scheduleAutosave();
 
@@ -88,6 +93,7 @@
 
     function handleNewClicked() {
         characterSheet = getNewCharacterSheet();
+        dials.set(characterSheet.dials);
         activeIndex = 0;
         showSnackBar('Created a new character sheet.');
     }
@@ -103,6 +109,7 @@
                 if (validateCharacterSheet(tempCharacterSheet)) {
                     setTimeout(() => showSnackBar("Character sheet loaded."), 250);
                     characterSheet = tempCharacterSheet;
+                    dials.set(characterSheet.dials);
                     activeIndex = 0;
                 }
             } catch (err) {

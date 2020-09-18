@@ -1,6 +1,8 @@
+import getNewDials, {validateDials} from "./dials";
 export default function getNewCharacterSheet() {
     return {
-        version: "fate core 3.0 - standard",
+        fateVersion: "fate core 3.0 - standard",
+        dials: getNewDials(),
         characterData: {
             name: "",
             pronouns:"",
@@ -12,6 +14,22 @@ export default function getNewCharacterSheet() {
                 trouble:"",
                 otherAspects:[]
             },
+            approaches:[
+                {name:"Careful", rank:0},
+                {name:"Clever", rank:0},
+                {name:"Flashy", rank:0},
+                {name:"Forceful", rank:0},
+                {name:"Quick", rank:0},
+                {name:"Sneaky", rank:0}
+            ],
+            attributes:[
+                {name:"Strength", rank:0},
+                {name:"Dexterity", rank:0},
+                {name:"Constitution", rank:0},
+                {name:"Intelligence", rank:0},
+                {name:"Wisdom", rank:0},
+                {name:"Charisma", rank:0}
+            ],
             skills: {
                 superb:[],
                 great:[],
@@ -23,6 +41,12 @@ export default function getNewCharacterSheet() {
             extras:"",
             stunts:"",
             vitals : {
+                singleStress:[
+                    { label:"1", taken:false},
+                    { label:"2", taken:false},
+                    { label:"3", taken:false},
+                    { label:"4", taken:false},
+                ],
                 physicalStress:[
                     { label:"1", taken:false},
                     { label:"2", taken:false},
@@ -46,17 +70,16 @@ export default function getNewCharacterSheet() {
     };
 }
 
-
 export function validateCharacterSheet(sheet) {
     let result = true;
     try {
-
-        /* TODO: There has to be a better way.
-                 like maybe a JSON DTD? */
-
         // for now try accessing things in a way that will throw an exception.
-        let _ = sheet.characterData.name.toString();
+        if (!!sheet.dials) { result = validateDials(sheet.dials)}
+        else if (!sheet.dials) { sheet.dials=getNewDials(); }
 
+        if (result) {
+            let _ = sheet.characterData.name.toString();
+        }
     } catch (err) {
         console.log(err);
         result = false;

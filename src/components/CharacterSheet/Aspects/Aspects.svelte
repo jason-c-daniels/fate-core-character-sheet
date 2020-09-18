@@ -14,4 +14,5 @@
     <input type="text" placeholder="Other Aspect" bind:value={aspects.otherAspects[0]} />
     <input type="text" placeholder="Other Aspect" bind:value={aspects.otherAspects[1]} />
     <input type="text" placeholder="Other Aspect" bind:value={aspects.otherAspects[2]} />
+    <input type="text" placeholder="Other Aspect" bind:value={aspects.otherAspects[3]} />
 </Section>

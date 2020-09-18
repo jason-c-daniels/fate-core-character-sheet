@@ -33,7 +33,7 @@
    - [The Phase Trio](#the-phase-trio)
       - [Phase One: Your Adventure](#phase-one-your-adventure)
       - [Phase Two: Crossing Paths](#phase-two-crossing-paths)
-      - [Phase Three: Crossing Paths Again](#phase-three crossing-paths-again)
+      - [Phase Three: Crossing Paths Again](#phase-three-crossing-paths-again)
    - [Skills](#skills)
    - [Stunts and Refresh](#stunts-and-refresh)
    - [Stress and Consequences](#stress-and-consequences)
@@ -68,7 +68,7 @@
    - [COMPELLING ASPECTS](#compelling-aspects)
       - [Types of Compels](#types-of-compels)
       - [Retroactive Compels](#retroactive-compels)
-      - [Compelling with Situation Aspects](#compelling-with situation-aspects)
+      - [Compelling with Situation Aspects](#compelling-with-situation-aspects)
    - [USING ASPECTS FOR ROLEPLAYING](#using-aspects-for-roleplaying)
    - [REMOVING OR CHANGING AN ASPECT](#removing-or-changing-an-aspect)
    - [CREATING AND DISCOVERING NEW ASPECTS IN PLAY](#creating-and-discovering-new-aspects-in-play)
@@ -227,4 +227,12 @@
 <style>
     @import "../styles/markdown.css";
     
+    li {
+        font-family: 'Gothic A1', sans-serif;
+    }
+    
+    ul {
+        margin-top: 0.5rem;
+    }
+
 </style>

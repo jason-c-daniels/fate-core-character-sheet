@@ -7,14 +7,14 @@ div {
 
 input {
     margin-left: 0.25rem;
-    width: 100%;
+    width: 5.5rem;
 }
 
 label {
     display: inline-block;
     text-align: right;
     padding-top: 0.2rem;
-    width:100%;
+    width:5.5rem;
     font-weight: bold;
     color: var(--input-border-color)
 }

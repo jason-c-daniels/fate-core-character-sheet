@@ -6,6 +6,7 @@
     import Section from "../../shared/Section";
     import CheckedItem, {defaultCss as CSS} from "./CheckedItem/CheckedItem.svelte";
     export let vitals={};
+    export let dials={};
     let css={...CSS,color:'black', size:"1.6rem", margin:"1rem;"};
     let grayCss={...css,color:'gray'};
 </script>

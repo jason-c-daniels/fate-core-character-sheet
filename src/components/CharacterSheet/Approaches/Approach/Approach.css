@@ -1,0 +1,13 @@
+input {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+#name {
+    width: 100%;
+    border: none;
+}
+
+#rank {
+    width:33%;
+}

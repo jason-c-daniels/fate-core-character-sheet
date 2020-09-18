@@ -14,4 +14,5 @@
     <SkillGroup title="Good (+3)" bind:skills={skills.good} />
     <SkillGroup title="Fair (+2)" bind:skills={skills.fair} />
     <SkillGroup title="Average (+1)" bind:skills={skills.average} />
+    <SkillGroup title="Unranked (0)" bind:skills={skills.unranked} />
 </Section>

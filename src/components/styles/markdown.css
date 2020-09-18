@@ -8,15 +8,17 @@ h1,h2,h3,h4 {
     margin-bottom: 1.5rem;
 }
 
+li,ul,ol,p {
+    font-family: 'EB Garamond', serif;
+}
 
 p {
-    font-family: 'EB Garamond', serif;
     margin-bottom: 0.5rem;
     text-indent: 1.1rem;
     line-height: 1.3rem;
 }
 
-li,ol {
+li {
     margin-left: 2rem;
     margin-bottom: 0.5rem;
 }
