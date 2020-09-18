@@ -27,7 +27,7 @@
         border-color:{css.color}; border-style:solid; background-color:{css.backgroundColor};"
         on:click={handleClick}>
     <div class="check-text" style="width:{css.size}; height:{css.size}; font-size: {css.size}">
-    <span>
+    <span class="number">
       {number}
     </span>
     </div>
