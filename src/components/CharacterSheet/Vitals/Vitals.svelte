@@ -30,7 +30,9 @@
         <StressTrack title="Mental"
                      count="{dials.numberOfStressBoxes}"
                      grayAfter="{dials.stressBoxesGrayAfter}"
-                     bind:stressBoxes={vitals.mentalStress} />
+                     bind:stressBoxes={vitals.mentalStress}
+                     singlePointStress="{dials.useSinglePointStressBoxes}"
+        />
     {/if}
 </div>
     <Section title="Consequences" props={{style:"width:100%; flex-grow:1;flex-shrink:1;height:300px"}}>

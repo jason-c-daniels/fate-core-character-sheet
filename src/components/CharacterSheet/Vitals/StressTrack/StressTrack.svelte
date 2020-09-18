@@ -3,7 +3,7 @@
 </style>
 
 <script>
-    import CheckedItem, {defaultCss as CSS} from "./CheckedItem/CheckedItem.svelte";
+    import CheckedItem, {defaultCss as CSS} from "../../../shared/CheckedItem/CheckedItem.svelte";
     import Section from "../../../shared/Section";
 
     let css = {...CSS, color: 'black', size: "1.6rem", margin: "1rem;"};
@@ -14,9 +14,6 @@
     export let count = 4;
     export let grayAfter = 2;
     export let singlePointStress=false;
-
-
-
 
 </script>
 

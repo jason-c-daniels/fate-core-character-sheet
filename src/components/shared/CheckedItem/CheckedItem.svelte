@@ -22,10 +22,10 @@
     }
 </script>
 
-<div
-        class="box"
-        style="margin-left:0.5rem;margin-right:auto;color:{css.color}; width:{css.size}; height:{css.size}; border-width:{css.borderWidth};
-  border-color:{css.color}; border-style:solid; background-color:{css.backgroundColor};" on:click={handleClick}>
+<div    class="box"
+        style="margin-left:0.5rem;margin-right:0.5rem;color:{css.color}; width:{css.size}; height:{css.size}; border-width:{css.borderWidth};
+        border-color:{css.color}; border-style:solid; background-color:{css.backgroundColor};"
+        on:click={handleClick}>
     <div class="check-text" style="width:{css.size}; height:{css.size}; font-size: {css.size}">
     <span>
       {number}
