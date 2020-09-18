@@ -10,16 +10,15 @@
     };
 </script>
 <script>
-    import {createEventDispatcher} from 'svelte'
+    //import {createEventDispatcher} from 'svelte'
     import Check from './small-check.svg';
     export let number = 1;
     export let css = defaultCss;
-    export let checkedItem = {number:"",taken:false};
-    const dispatch = createEventDispatcher();
+    export let checkedItem = {number:number,taken:false};
 
     function handleClick() {
         checkedItem.taken = !checkedItem.taken;
-        dispatch('checkedChanged', { checked: checkedItem.taken });
+        //dispatch('checkedChanged', { checked: checkedItem.taken });
     }
 </script>
 
@@ -32,7 +31,7 @@
       {number}
     </span>
     </div>
-    {#if checkedItem.taken}
+    {#if checkedItem && checkedItem.taken}
         <div class="checkmark" style="width:100%; height:100%;">
             <div>
                 <Check width="{css.size}" height="{css.size}"/>

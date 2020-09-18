@@ -39,6 +39,7 @@ export default function getNewCharacterSheet() {
                 unranked:[]
             },
             extras:"",
+            equipment:"",
             stunts:"",
             vitals : {
                 singleStress:[

@@ -1,5 +1,5 @@
 <style>
-    @import "Extras.css";
+    @import "Equipment.css";
 </style>
 
 <script>
@@ -8,6 +8,6 @@
     export let rows=6;
 </script>
 
-<Section title="Extras" props={{style:"width:100%; margin-right:1rem;"}}>
+<Section title="Equipment" props={{style:"width:100%; margin-right:1rem;"}}>
     <textarea bind:value={value} placeholder="Extras" rows="{rows}"/>
 </Section>

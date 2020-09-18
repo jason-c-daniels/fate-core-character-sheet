@@ -15,6 +15,7 @@
     import Approaches from "./Approaches";
 
     import getNewCharacterSheet from '../../model/character';
+    import Equipment from "./Equipment/Equipment.svelte";
 
 
     export let characterSheet = getNewCharacterSheet();
@@ -34,6 +35,9 @@
         {/if}
     </div>
     <div class="flex-row" style="width: 100%; margin-bottom: 1rem;">
+        {#if characterSheet.dials.useEquipment}
+            <Equipment bind:value={characterSheet.characterData.equipment} rows="11"/>
+        {/if}
         {#if characterSheet.dials.useExtras}
             <Extras bind:value={characterSheet.characterData.extras} rows="11"/>
         {/if}

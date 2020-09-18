@@ -6,8 +6,17 @@ input {
 #name {
     width: 100%;
     border: none;
+    margin-left: 0.25rem;
 }
 
 #rank {
-    width:33%;
+    width:40%;
+}
+
+span {
+    display: inline-block;
+    text-align: center;
+    height:100%;
+    margin-top:0.25rem;
+    margin-right:0.25rem;
 }

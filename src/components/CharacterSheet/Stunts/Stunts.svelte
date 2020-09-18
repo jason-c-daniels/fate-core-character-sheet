@@ -8,6 +8,6 @@
     export let rows=6;
 </script>
 
-<Section title="Stunts" props={{style:"width:100%; margin-left:1rem;"}}>
+<Section title="Stunts" props={{style:"width:100%;"}}>
     <textarea bind:value={value} placeholder="Stunts" rows="{rows}"/>
 </Section>

@@ -7,6 +7,8 @@
 </script>
 
 <div class="flex-row">
-    <input id="name" type="text" placeholder="Attribute Name" bind:value={attribute.name} />+<input id="rank" type="number" min="0" max="10" bind:value={attribute.rank}/>
+    <input id="name" type="text" placeholder="Attribute Name" bind:value={attribute.name} />
+    <span>+</span>
+    <input id="rank" type="number" min="0" max="10" bind:value={attribute.rank}/>
 </div>
 

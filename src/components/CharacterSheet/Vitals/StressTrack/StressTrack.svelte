@@ -10,10 +10,14 @@
     let grayCss = {...css, color: 'gray'};
 
     export let title = "Stress";
-    export let stressBoxes = [];
+    export let stressBoxes = [{number:"1",taken:false}];
     export let count = 4;
     export let grayAfter = 2;
     export let singlePointStress=false;
+
+
+
+
 </script>
 
 <Section title="{title}" >

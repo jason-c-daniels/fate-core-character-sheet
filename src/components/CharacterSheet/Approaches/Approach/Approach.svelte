@@ -7,5 +7,7 @@
 </script>
 
 <div class="flex-row">
-    +<input id="rank" type="number" min="0" max="10" bind:value={approach.rank}/><input id="name" type="text" placeholder="Approach Name" bind:value={approach.name} />
+    <span>+</span>
+    <input id="rank" type="number" min="0" max="10" bind:value={approach.rank}/>
+    <input id="name" type="text" placeholder="Approach Name" bind:value={approach.name} />
 </div>

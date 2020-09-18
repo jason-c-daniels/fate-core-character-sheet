@@ -7,7 +7,8 @@ export default function getNewDials() {
             useApproachesInsteadOfSkills: false,
             useSkillsInsteadOfApproaches: true,
             useAttributes: false,
-            useExtras: true
+            useExtras: true,
+            useEquipment: false
         };
 }
 
