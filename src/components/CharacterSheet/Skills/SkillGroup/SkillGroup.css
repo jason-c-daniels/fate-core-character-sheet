@@ -7,14 +7,16 @@ div {
 
 input {
     margin-left: 0.25rem;
-    width: 5.5rem;
+    width: 5.7rem;
 }
 
 label {
     display: inline-block;
     text-align: right;
     padding-top: 0.2rem;
-    width:5.5rem;
+    width:5.8rem;
+    flex-grow: 0;
+    flex-shrink: 0;
     font-weight: bold;
     color: var(--input-border-color)
 }

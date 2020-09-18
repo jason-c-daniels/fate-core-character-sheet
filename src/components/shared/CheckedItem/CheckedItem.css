@@ -62,3 +62,8 @@
     display: table;
     clear: both;
 }
+
+.number {
+    margin-left: -0.90rem;
+    margin-top: -0.5rem;
+}
