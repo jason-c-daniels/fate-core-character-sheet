@@ -9,5 +9,5 @@
 </script>
 
 <Section title="Equipment" props={{style:"width:100%; margin-right:1rem;"}}>
-    <textarea bind:value={value} placeholder="Extras" rows="{rows}"/>
+    <textarea bind:value={value} placeholder="Equipment" rows="{rows}"/>
 </Section>
