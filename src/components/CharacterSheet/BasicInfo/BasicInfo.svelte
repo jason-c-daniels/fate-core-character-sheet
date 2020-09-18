@@ -19,7 +19,7 @@
             </div>
             <div class="refresh">
                 <label for="refresh">Refresh</label>
-                <input id="refresh" height="100%" type="number" bind:value={characterData.refresh} style="border:none"/>
+                <input id="refresh" height="100%" type="number" bind:value={characterData.refresh} min="1" max="10" style="border:none"/>
             </div>
         </div>
     </Section>

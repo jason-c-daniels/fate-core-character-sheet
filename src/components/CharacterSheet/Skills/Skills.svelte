@@ -8,7 +8,7 @@
     export let skills={};
 </script>
 
-<Section title="Skills" props={{style:"margin-left: 1rem; width:100%; flex-grow:2; flex-shrink:"}}>
+<Section title="Skills" props={{style:"margin-left: 1rem; width:53%; flex-grow:2; flex-shrink:2"}}>
     <SkillGroup title="Superb (+5)" bind:skills={skills.superb} />
     <SkillGroup title="Great (+4)" bind:skills={skills.great} />
     <SkillGroup title="Good (+3)" bind:skills={skills.good} />
