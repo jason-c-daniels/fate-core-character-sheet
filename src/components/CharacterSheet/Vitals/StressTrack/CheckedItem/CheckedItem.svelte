@@ -14,25 +14,25 @@
     import Check from './small-check.svg';
     export let number = 1;
     export let css = defaultCss;
-    export let checked;
+    export let checkedItem = {number:"",taken:false};
     const dispatch = createEventDispatcher();
 
     function handleClick() {
-        checked = !checked;
-        dispatch('checkedChanged', { checked: checked });
+        checkedItem.taken = !checkedItem.taken;
+        dispatch('checkedChanged', { checked: checkedItem.taken });
     }
 </script>
 
 <div
         class="box"
-        style="margin-left:0.5rem;margin-right:1.5rem;color:{css.color}; width:{css.size}; height:{css.size}; border-width:{css.borderWidth};
+        style="margin-left:0.5rem;margin-right:auto;color:{css.color}; width:{css.size}; height:{css.size}; border-width:{css.borderWidth};
   border-color:{css.color}; border-style:solid; background-color:{css.backgroundColor};" on:click={handleClick}>
     <div class="check-text" style="width:{css.size}; height:{css.size}; font-size: {css.size}">
     <span>
       {number}
     </span>
     </div>
-    {#if checked}
+    {#if checkedItem.taken}
         <div class="checkmark" style="width:100%; height:100%;">
             <div>
                 <Check width="{css.size}" height="{css.size}"/>
