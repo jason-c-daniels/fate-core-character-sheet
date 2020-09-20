@@ -1,5 +1,6 @@
 export default function getNewDials() {
     return {
+            topTitle:"ID",
             useStress:true,
             useSingleStressTrack: false,
             useSinglePointStressBoxes: false,

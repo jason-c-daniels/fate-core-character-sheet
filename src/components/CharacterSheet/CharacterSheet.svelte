@@ -22,7 +22,7 @@
 </script>
 
 <div class="page" >
-    <BasicInfo bind:characterData={characterSheet.characterData}/>
+    <BasicInfo bind:characterData={characterSheet.characterData} title="{characterSheet.dials.topTitle}"/>
     <div class="flex-row" style="width: 100%; margin-bottom: 1rem;">
         <Aspects bind:aspects={characterSheet.characterData.aspects}/>
         {#if characterSheet.dials.useAttributes}

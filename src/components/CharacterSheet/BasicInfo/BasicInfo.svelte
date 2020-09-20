@@ -7,11 +7,12 @@
     import Section from "../../shared/Section";
 
     export let characterData = {};
-
+    export let title="ID";
+    if (!title) {title="ID";}
 
 </script>
 <div class="info-bar">
-    <Section title="ID" props={{style:"width:100%; margin-right:1rem"}}>
+    <Section {title} props={{style:"width:100%; margin-right:1rem"}}>
         <div class="flex-row">
             <div class="flex-column" style="flex-grow: 12">
                 <input bind:value={characterData.name} width="100%" placeholder="Name" type="text" class="name"/>

@@ -57,6 +57,7 @@
 <mwc-dialog heading="Character Sheet Settings" bind:this={settingsDialogElement} on:closed={handleDialogClosed} width="120rem" >
     <div style="margin-top: 1rem;">
         <h3>Attributes, Approaches and Skills</h3>
+        <TextField type="text" label="Top section title" bind:value={my_dials.topTitle} style="width:100%" />
         <Switch title="Use skills" bind:value={my_dials.useSkillsInsteadOfApproaches} />
         <Switch title="Use approaches" bind:value={my_dials.useApproachesInsteadOfSkills} />
         <Switch title="Use attributes" bind:value={my_dials.useAttributes} />

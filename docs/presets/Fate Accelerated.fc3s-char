@@ -1,0 +1,210 @@
+{
+  "fateVersion": "fate core 3.0 - standard",
+  "dials": {
+    "useStress": true,
+    "useSingleStressTrack": true,
+    "useSinglePointStressBoxes": false,
+    "numberOfStressBoxes": 3,
+    "stressBoxesGrayAfter": 3,
+    "useApproachesInsteadOfSkills": true,
+    "useSkillsInsteadOfApproaches": false,
+    "useAttributes": false,
+    "useExtras": false,
+    "useStunts": true,
+    "useEquipment": false,
+    "hideFourthConsequence": false,
+    "attributesName": "Attributes",
+    "physicalStressTitle": "Physical Stress",
+    "mentalStressTitle": "Mental Stress",
+    "singleStressTitle": "Stress",
+    "physicalStressSubtitle": "Physique",
+    "mentalStressSubtitle": "Will",
+    "singleStressSubtitle": "Physique/Will",
+    "middleRows": 11,
+    "useConsequences": true,
+    "useConditions": false,
+    "useCorruption": false,
+    "topTitle": "Fate Accelerated"
+  },
+  "characterData": {
+    "name": "",
+    "pronouns": "",
+    "description": "",
+    "refresh": 3,
+    "fate": 3,
+    "aspects": {
+      "highConcept": "",
+      "trouble": "",
+      "otherAspects": []
+    },
+    "approaches": [
+      {
+        "name": "Careful",
+        "rank": 0
+      },
+      {
+        "name": "Clever",
+        "rank": 0
+      },
+      {
+        "name": "Flashy",
+        "rank": 0
+      },
+      {
+        "name": "Forceful",
+        "rank": 0
+      },
+      {
+        "name": "Quick",
+        "rank": 0
+      },
+      {
+        "name": "Sneaky",
+        "rank": 0
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Strength",
+        "rank": 0
+      },
+      {
+        "name": "Dexterity",
+        "rank": 0
+      },
+      {
+        "name": "Toughness",
+        "rank": 0
+      },
+      {
+        "name": "Intelligence",
+        "rank": 0
+      },
+      {
+        "name": "Willpower",
+        "rank": 0
+      },
+      {
+        "name": "Charm",
+        "rank": 0
+      }
+    ],
+    "skills": {
+      "superb": [],
+      "great": [],
+      "good": [],
+      "fair": [],
+      "average": [],
+      "unranked": []
+    },
+    "extras": "",
+    "equipment": "",
+    "stunts": "",
+    "vitals": {
+      "singleStress": [
+        {
+          "label": "1",
+          "taken": false
+        },
+        {
+          "label": "2",
+          "taken": false
+        },
+        {
+          "label": "3",
+          "taken": false
+        },
+        {
+          "label": "4",
+          "taken": false
+        }
+      ],
+      "physicalStress": [
+        {
+          "label": "1",
+          "taken": false
+        },
+        {
+          "label": "2",
+          "taken": false
+        },
+        {
+          "label": "3",
+          "taken": false
+        },
+        {
+          "label": "4",
+          "taken": false
+        }
+      ],
+      "mentalStress": [
+        {
+          "label": "1",
+          "taken": false
+        },
+        {
+          "label": "2",
+          "taken": false
+        },
+        {
+          "label": "3",
+          "taken": false
+        },
+        {
+          "label": "4",
+          "taken": false
+        }
+      ],
+      "consequences": {
+        "mild1": "",
+        "moderate": "",
+        "severe": "",
+        "mild2": ""
+      },
+      "physicalConditions": [
+        {
+          "number": 1,
+          "name": "Hurt",
+          "taken": false
+        },
+        {
+          "number": 1,
+          "name": "Bruised",
+          "taken": false
+        },
+        {
+          "number": 2,
+          "name": "Injured",
+          "taken": false
+        },
+        {
+          "number": 3,
+          "name": "Wounded",
+          "taken": false
+        }
+      ],
+      "mentalConditions": [
+        {
+          "number": 1,
+          "name": "Startled",
+          "taken": false
+        },
+        {
+          "number": 1,
+          "name": "Scared",
+          "taken": false
+        },
+        {
+          "number": 2,
+          "name": "Shaken",
+          "taken": false
+        },
+        {
+          "number": 3,
+          "name": "Demoralized",
+          "taken": false
+        }
+      ]
+    }
+  }
+}
