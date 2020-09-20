@@ -36,8 +36,9 @@ The page layout and other original creative content are licensed separately unde
 
 ## CC-BY 3.0
 
-This work is based on Fate Core (found at http://www.faterpg.com/), a 
-product of Evil Hat Productions, LLC, developed, authored, and edited by 
+This work is based on Fate Core, Fate Condensed, and Fate Accelerated
+(all of which can be found at http://www.faterpg.com/), all are 
+products of Evil Hat Productions, LLC, developed, authored, and edited by 
 PK Sullivan, Lara Turner, Leonard Balsera, Fred Hicks, Richard Bellingham, 
 Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use under 
 the [Creative Commons Attribution 3.0 Unported license](http://creativecommons.org/licenses/by/3.0/).

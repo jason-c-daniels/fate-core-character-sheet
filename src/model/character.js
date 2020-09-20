@@ -25,10 +25,10 @@ export default function getNewCharacterSheet() {
             attributes:[
                 {name:"Strength", rank:0},
                 {name:"Dexterity", rank:0},
-                {name:"Constitution", rank:0},
+                {name:"Toughness", rank:0},
                 {name:"Intelligence", rank:0},
-                {name:"Wisdom", rank:0},
-                {name:"Charisma", rank:0}
+                {name:"Willpower", rank:0},
+                {name:"Charm", rank:0}
             ],
             skills: {
                 superb:[],
