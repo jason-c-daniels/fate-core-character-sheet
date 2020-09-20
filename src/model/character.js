@@ -65,7 +65,19 @@ export default function getNewCharacterSheet() {
                     moderate:"",
                     severe:"",
                     mild2: ""
-                }
+                },
+                physicalConditions: [
+                    {number:1, name:"Hurt", taken:false},
+                    {number:1, name:"Bruised", taken:false},
+                    {number:2, name:"Injured", taken:false},
+                    {number:3, name:"Wounded", taken:false},
+                ],
+                mentalConditions: [
+                    {number:1, name:"Startled", taken:false},
+                    {number:1, name:"Scared", taken:false},
+                    {number:2, name:"Shaken", taken:false},
+                    {number:3, name:"Demoralized", taken:false},
+                ]
             }
         }
     };
