@@ -17,7 +17,7 @@
                      subtitle="{dials.singleStressSubtitle}"
                      count="{dials.numberOfStressBoxes}"
                      grayAfter="{dials.stressBoxesGrayAfter}"
-                     bind:stressBoxes={vitals.singleStress}
+                     stressBoxes={vitals.singleStress}
                      singlePointStress="{dials.useSinglePointStressBoxes}"
         />
     {:else}
@@ -25,7 +25,7 @@
                      subtitle="{dials.physicalStressSubtitle}"
                      count="{dials.numberOfStressBoxes}"
                      grayAfter="{dials.stressBoxesGrayAfter}"
-                     bind:stressBoxes={vitals.physicalStress}
+                     stressBoxes={vitals.physicalStress}
                      singlePointStress="{dials.useSinglePointStressBoxes}"
         />
 
@@ -33,11 +33,12 @@
                      subtitle="{dials.mentalStressSubtitle}"
                      count="{dials.numberOfStressBoxes}"
                      grayAfter="{dials.stressBoxesGrayAfter}"
-                     bind:stressBoxes={vitals.mentalStress}
+                     stressBoxes={vitals.mentalStress}
                      singlePointStress="{dials.useSinglePointStressBoxes}"
         />
     {/if}
 </div>
+    {#if dials.useConsequences}
     <Section title="Consequences" props={{style:"width:100%; flex-grow:1;flex-shrink:1;height:300px"}}>
         <div class="consequences">
             <div>
@@ -56,4 +57,5 @@
             {/if}
         </div>
     </Section>
+    {/if}
 </div>

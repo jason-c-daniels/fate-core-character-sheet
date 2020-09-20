@@ -49,15 +49,6 @@
 
     function handleDialogClosed(evt) {
         if (evt.detail.action === 'ok') {
-
-            my_dials.stressBoxesGrayAfter = parseInt(stressBoxesGrayAfterElement.value);
-            my_dials.numberOfStressBoxes = parseInt(numberOfStressBoxesElement.value);
-            my_dials.physicalStressTitle = physicalStressTitleElement.value;
-            my_dials.physicalStressSubtitle = physicalStressSubtitleElement.value;
-            my_dials.mentalStressTitle = mentalStressTitleElement.value;
-            my_dials.mentalStressSubtitle = mentalStressSubtitleElement.value;
-            my_dials.singleStressTitle = singleStressTitleElement.value;
-            my_dials.singleStressSubtitle = singleStressSubtitleElement.value;
             dials.set({...my_dials});
         }
     }
