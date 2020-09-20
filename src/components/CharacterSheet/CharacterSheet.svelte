@@ -30,7 +30,8 @@
         {/if}
         {#if characterSheet.dials.useSkillsInsteadOfApproaches}
             <Skills bind:skills={characterSheet.characterData.skills}/>
-        {:else if characterSheet.dials.useApproachesInsteadOfSkills}
+        {/if}
+        {#if characterSheet.dials.useApproachesInsteadOfSkills}
             <Approaches bind:approaches={characterSheet.characterData.approaches} />
         {/if}
     </div>
@@ -41,7 +42,9 @@
         {#if characterSheet.dials.useExtras}
             <Extras bind:value={characterSheet.characterData.extras} rows="{!!characterSheet.dials.middleRows ? characterSheet.dials.middleRows : 11}"/>
         {/if}
+        {#if characterSheet.dials.useStunts}
         <Stunts bind:value={characterSheet.characterData.stunts} rows="{!!characterSheet.dials.middleRows ? characterSheet.dials.middleRows : 11}"/>
+        {/if}
     </div>
     <Vitals bind:vitals={characterSheet.characterData.vitals} bind:dials={characterSheet.dials}/>
 </div>

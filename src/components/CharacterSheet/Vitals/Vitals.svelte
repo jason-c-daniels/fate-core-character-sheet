@@ -14,30 +14,32 @@
 
 <div class="flex-row" style="width: 100%">
 <div style="width: 28%; flex-shrink: 0; flex-grow: 0; margin-right:1rem;">
-    {#if dials.useSingleStressTrack}
-        <StressTrack title="{dials.singleStressTitle}"
-                     subtitle="{dials.singleStressSubtitle}"
-                     count="{dials.numberOfStressBoxes}"
-                     grayAfter="{dials.stressBoxesGrayAfter}"
-                     stressBoxes={vitals.singleStress}
-                     singlePointStress="{dials.useSinglePointStressBoxes}"
-        />
-    {:else}
-        <StressTrack title="{dials.physicalStressTitle}"
-                     subtitle="{dials.physicalStressSubtitle}"
-                     count="{dials.numberOfStressBoxes}"
-                     grayAfter="{dials.stressBoxesGrayAfter}"
-                     stressBoxes={vitals.physicalStress}
-                     singlePointStress="{dials.useSinglePointStressBoxes}"
-        />
+    {#if dials.useStress}
+        {#if dials.useSingleStressTrack}
+            <StressTrack title="{dials.singleStressTitle}"
+                         subtitle="{dials.singleStressSubtitle}"
+                         count="{dials.numberOfStressBoxes}"
+                         grayAfter="{dials.stressBoxesGrayAfter}"
+                         stressBoxes={vitals.singleStress}
+                         singlePointStress="{dials.useSinglePointStressBoxes}"
+            />
+        {:else}
+            <StressTrack title="{dials.physicalStressTitle}"
+                         subtitle="{dials.physicalStressSubtitle}"
+                         count="{dials.numberOfStressBoxes}"
+                         grayAfter="{dials.stressBoxesGrayAfter}"
+                         stressBoxes={vitals.physicalStress}
+                         singlePointStress="{dials.useSinglePointStressBoxes}"
+            />
 
-        <StressTrack title="{dials.mentalStressTitle}"
-                     subtitle="{dials.mentalStressSubtitle}"
-                     count="{dials.numberOfStressBoxes}"
-                     grayAfter="{dials.stressBoxesGrayAfter}"
-                     stressBoxes={vitals.mentalStress}
-                     singlePointStress="{dials.useSinglePointStressBoxes}"
-        />
+            <StressTrack title="{dials.mentalStressTitle}"
+                         subtitle="{dials.mentalStressSubtitle}"
+                         count="{dials.numberOfStressBoxes}"
+                         grayAfter="{dials.stressBoxesGrayAfter}"
+                         stressBoxes={vitals.mentalStress}
+                         singlePointStress="{dials.useSinglePointStressBoxes}"
+            />
+        {/if}
     {/if}
 </div>
     {#if dials.useConsequences}

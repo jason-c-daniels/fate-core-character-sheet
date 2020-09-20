@@ -1,5 +1,6 @@
 export default function getNewDials() {
     return {
+            useStress:true,
             useSingleStressTrack: false,
             useSinglePointStressBoxes: false,
             numberOfStressBoxes: 4,
@@ -8,6 +9,7 @@ export default function getNewDials() {
             useSkillsInsteadOfApproaches: true,
             useAttributes: false,
             useExtras: true,
+            useStunts: true,
             useEquipment: false,
             hideFourthConsequence:false,
             attributesName:"Attributes",
