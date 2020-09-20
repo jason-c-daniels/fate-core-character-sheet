@@ -30,8 +30,9 @@
     } from '../applicationSettings'
 
     import About from '../components/About/About.md';
-    import SRD from "../components/SRD/SRD.svelte";
-    import SettingsDialog from "./SettingsDialog/SettingsDialog.svelte";
+    import SRD from "../components/SRD";
+    import SettingsDialog from "./SettingsDialog";
+    import Notes from "../components/Notes";
 
 
     let activeIndex;
@@ -212,6 +213,7 @@
             <div id="content" style="padding:0">
                 {#if activeIndex === 0}
                     <CharacterSheet bind:characterSheet={characterSheet}/>
+                    <Notes bind:notes={characterSheet.characterData.notes} bind:count="{characterSheet.dials.numberOfNotesSheet}" bind:name="{characterSheet.characterData.name}"/>
                 {:else if activeIndex === 1}
                     <SRD />
                 {:else if activeIndex === 2}
@@ -236,5 +238,5 @@
          (i.e. print() )
      -->
     <CharacterSheet bind:characterSheet={characterSheet}/>
-
+    <Notes bind:notes={characterSheet.characterData.notes} bind:count="{characterSheet.dials.numberOfNotesSheet}" bind:name="{characterSheet.characterData.name}"/>
 </main>

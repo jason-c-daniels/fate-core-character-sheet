@@ -1,5 +1,6 @@
 export default function getNewDials() {
     return {
+            numberOfNoteSheets:1,
             topTitle:"ID",
             useStress:true,
             useSingleStressTrack: false,

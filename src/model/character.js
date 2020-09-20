@@ -9,6 +9,7 @@ export default function getNewCharacterSheet() {
             description:"",
             refresh:3,
             fate:3,
+            notes:[""],
             aspects: {
                 highConcept:"",
                 trouble:"",
