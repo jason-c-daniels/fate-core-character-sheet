@@ -13,9 +13,11 @@
                 {name:"Wisdom", rank:0},
                 {name:"Charisma", rank:0}
             ];
+    export let dials={};
+
 </script>
 
-<Section title="Attributes" props={{style:"flex-grow:0;flex-shrink:0;width:9rem;margin-left:1rem;"}}>
+<Section title="{dials.attributesName}" props={{style:"flex-grow:0;flex-shrink:0;width:9rem;margin-left:1rem;"}}>
     {#each attributes as attribute}
         <Attribute bind:attribute={attribute} />
     {/each}

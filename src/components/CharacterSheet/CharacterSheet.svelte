@@ -26,7 +26,7 @@
     <div class="flex-row" style="width: 100%; margin-bottom: 1rem;">
         <Aspects bind:aspects={characterSheet.characterData.aspects}/>
         {#if characterSheet.dials.useAttributes}
-            <Attributes bind:attributes={characterSheet.characterData.attributes} />
+            <Attributes bind:attributes={characterSheet.characterData.attributes} bind:dials={characterSheet.dials}/>
         {/if}
         {#if characterSheet.dials.useSkillsInsteadOfApproaches}
             <Skills bind:skills={characterSheet.characterData.skills}/>
@@ -36,12 +36,12 @@
     </div>
     <div class="flex-row" style="width: 100%; margin-bottom: 1rem;">
         {#if characterSheet.dials.useEquipment}
-            <Equipment bind:value={characterSheet.characterData.equipment} rows="11"/>
+            <Equipment bind:value={characterSheet.characterData.equipment} rows="{!!characterSheet.dials.middleRows ? characterSheet.dials.middleRows : 11}"/>
         {/if}
         {#if characterSheet.dials.useExtras}
-            <Extras bind:value={characterSheet.characterData.extras} rows="11"/>
+            <Extras bind:value={characterSheet.characterData.extras} rows="{!!characterSheet.dials.middleRows ? characterSheet.dials.middleRows : 11}"/>
         {/if}
-        <Stunts bind:value={characterSheet.characterData.stunts} rows="11"/>
+        <Stunts bind:value={characterSheet.characterData.stunts} rows="{!!characterSheet.dials.middleRows ? characterSheet.dials.middleRows : 11}"/>
     </div>
     <Vitals bind:vitals={characterSheet.characterData.vitals} bind:dials={characterSheet.dials}/>
 </div>

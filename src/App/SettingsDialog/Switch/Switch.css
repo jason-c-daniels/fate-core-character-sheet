@@ -1,0 +1,21 @@
+
+div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+mwc-switch {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 1.2rem;
+}
+
+label {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width:100%;
+    float:left;
+    display: inline-block;
+    margin-top:1.0rem;
+}

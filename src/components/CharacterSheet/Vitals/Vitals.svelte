@@ -13,21 +13,24 @@
 <div class="flex-row" style="width: 100%">
 <div style="width: 70%; flex-shrink: 2; flex-grow: 3; margin-right:1rem;">
     {#if dials.useSingleStressTrack}
-        <StressTrack title="Stress"
+        <StressTrack title="{dials.singleStressTitle}"
+                     subtitle="{dials.singleStressSubtitle}"
                      count="{dials.numberOfStressBoxes}"
                      grayAfter="{dials.stressBoxesGrayAfter}"
                      bind:stressBoxes={vitals.singleStress}
                      singlePointStress="{dials.useSinglePointStressBoxes}"
         />
     {:else}
-        <StressTrack title="Physical"
+        <StressTrack title="{dials.physicalStressTitle}"
+                     subtitle="{dials.physicalStressSubtitle}"
                      count="{dials.numberOfStressBoxes}"
                      grayAfter="{dials.stressBoxesGrayAfter}"
                      bind:stressBoxes={vitals.physicalStress}
                      singlePointStress="{dials.useSinglePointStressBoxes}"
         />
 
-        <StressTrack title="Mental"
+        <StressTrack title="{dials.mentalStressTitle}"
+                     subtitle="{dials.mentalStressSubtitle}"
                      count="{dials.numberOfStressBoxes}"
                      grayAfter="{dials.stressBoxesGrayAfter}"
                      bind:stressBoxes={vitals.mentalStress}
@@ -46,9 +49,11 @@
             <div>
             <label for="severe">6</label><input id="severe" type="text" placeholder=" Severe" bind:value={vitals.consequences.severe} />
             </div>
+            {#if !dials.hideFourthConsequence}
             <div>
             <label for="mild2" style="color:var(--input-border-color); break-before: column">2</label><input id="mild2" type="text" placeholder=" Mild" bind:value={vitals.consequences.mild2} />
             </div>
+            {/if}
         </div>
     </Section>
 </div>

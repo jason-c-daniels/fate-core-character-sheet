@@ -3,26 +3,40 @@
     /*-- Add support for Web Components to older browsers. --*/
     import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
     import '@material/mwc-top-app-bar-fixed';
+    import '@material/mwc-button';
     import '@material/mwc-icon-button';
     import '@material/mwc-drawer';
     import '@material/mwc-tab';
     import '@material/mwc-tab-bar';
     import '@material/mwc-icon';
+    import '@material/mwc-switch';
+    import '@material/mwc-select';
     import '@material/mwc-snackbar';
+    import '@material/mwc-list/mwc-list-item';
+
     import downloadToClient from 'file-saver';
     import Dropzone from "svelte-file-dropzone";
     import CharacterSheet from "../components/CharacterSheet";
     import getNewCharacterSheet, {validateCharacterSheet} from "../model/character";
+
     import LocalStorageRepository from '../repository/localStorageRepository';
-    import {applicationName, fileExtension, storagePrefix, storageSuffix, sheetName, dials} from '../applicationSettings'
+    import {
+        applicationName,
+        fileExtension,
+        storagePrefix,
+        storageSuffix,
+        sheetName,
+        dials
+    } from '../applicationSettings'
 
     import About from '../components/About/About.md';
     import SRD from "../components/SRD/SRD.svelte";
+    import SettingsDialog from "./SettingsDialog/SettingsDialog.svelte";
 
 
     let activeIndex;
 
-    let snackBarElement, tabBarElement;
+    let snackBarElement, tabBarElement, settingsDialogElement;
     let characterSheet;
     let disabled = "";
     let showLoadPane = false;
@@ -50,7 +64,9 @@
     });
     const unsubscribe_dials = dials.subscribe(value => {
         these_dials = value;
-        if (!!characterSheet) { characterSheet.dials=these_dials;}
+        if (!!characterSheet) {
+            characterSheet.dials = these_dials;
+        }
     });
     let {sheet, isValid} = doInitialLoad();
 
@@ -148,6 +164,9 @@
         snackBarElement.show();
     }
 
+    function handleSettingsClicked(e) {
+        settingsDialogElement.show({...characterSheet.dials});
+    }
 </script>
 <style>
     @import "App.css";
@@ -173,8 +192,7 @@
             <mwc-tab label="SRD"></mwc-tab>
             <mwc-tab label="About"></mwc-tab>
         </mwc-tab-bar>
-        <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewClicked}
-                         {disabled}></mwc-icon-button>
+        <mwc-icon-button icon="note_add" slot="actionItems" on:click={handleNewClicked} {disabled}></mwc-icon-button>
         {#if showLoadPane}
             <mwc-icon-button icon="cancel" slot="actionItems" on:click={hideLoadPane}></mwc-icon-button>
         {:else}
@@ -183,6 +201,7 @@
         {/if}
         <mwc-icon-button icon="save" slot="actionItems" on:click={handleSaveClicked}
                          {disabled}></mwc-icon-button>
+        <mwc-icon-button icon="settings" slot="actionItems" on:click={handleSettingsClicked} {disabled}></mwc-icon-button>
         <mwc-icon-button icon="print" slot="actionItems" on:click={handlePrintClicked} {disabled}></mwc-icon-button>
         {#if (showLoadPane)}
             <div id="content" class="file-loader" style="height: 100%">
@@ -207,6 +226,7 @@
         <mwc-snackbar labelText="{snackBarText}" bind:this={snackBarElement}>
             <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
         </mwc-snackbar>
+        <SettingsDialog bind:this={settingsDialogElement}/>
     </mwc-top-app-bar-fixed>
 </main>
 

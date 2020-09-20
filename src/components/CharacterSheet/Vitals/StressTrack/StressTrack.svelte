@@ -10,6 +10,7 @@
     let grayCss = {...css, color: 'gray'};
 
     export let title = "Stress";
+    export let subtitle='Physique/Will';
     export let stressBoxes = [{number:"1",taken:false}];
     export let count = 4;
     export let grayAfter = 2;
@@ -17,7 +18,7 @@
 
 </script>
 
-<Section title="{title}" >
+<Section {title} {subtitle}>
     <div class="flex-row" style="height:4rem; flex-wrap: wrap">
     {#each Array(count) as _,i}
         <CheckedItem css={ i < grayAfter? css : grayCss} number="{ singlePointStress ? ' ' : i+1 }" bind:checkedItem={stressBoxes[i]} />
