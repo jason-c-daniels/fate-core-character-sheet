@@ -13,8 +13,8 @@
 
     import getNewDials from '../../model/dials'
     import {dials} from '../../applicationSettings'
-    import Switch from "./Switch/Switch.svelte";
-    import TextField from "./TextField/TextField.svelte";
+    import Switch from "../../components/shared/Switch/Switch.svelte";
+    import TextField from "../../components/shared/TextField/TextField.svelte";
 
     let my_dials = getNewDials();
 
@@ -69,7 +69,7 @@
         <Switch title="Use skills" bind:value={my_dials.useSkillsInsteadOfApproaches} />
         <Switch title="Use approaches" bind:value={my_dials.useApproachesInsteadOfSkills} />
         <Switch title="Use attributes" bind:value={my_dials.useAttributes} />
-        <TextField type="text" label="Attributes Section Name" bind:value={my_dials.attributesName} style="width:100%"/>
+        <TextField type="text" label="Attributes section name" bind:value={my_dials.attributesName} style="width:100%"/>
 
         <h3>Equipment, Stunts Extras</h3>
         <TextField type="number" min="5" max="16" label="Number of Rows in Middle Section" bind:value={my_dials.middleRows} style="width:100%"/>
@@ -79,8 +79,8 @@
         <h3>Stress</h3>
         <Switch title="Use single point stress boxes." bind:value={my_dials.useSinglePointStressBoxes} />
         <Switch title="Use single stress track" bind:value={my_dials.useSingleStressTrack} />
-        <TextField type="number" min="1" max="12" label="Number of Stress Boxes" bind:value={my_dials.numberOfStressBoxes} style="width:100%"/>
-        <TextField type="number" min="1" max="12" label="Stress Boxes Become Gray After #" bind:value={my_dials.stressBoxesGrayAfter} style="width:100%"/>
+        <TextField type="number" min="1" max="12" label="Number of stress goxes" bind:value={my_dials.numberOfStressBoxes} style="width:100%"/>
+        <TextField type="number" min="1" max="12" label="Stress boxes become gray after #" bind:value={my_dials.stressBoxesGrayAfter} style="width:100%"/>
         <TextField type="text" label="Physical stress track title" enabled={!my_dials.useSingleStressTrack} bind:value={my_dials.physicalStressTitle} style="width:100%"/>
         <TextField type="text" label="Physical stress track subtitle" enabled={!my_dials.useSingleStressTrack} bind:value={my_dials.physicalStressSubtitle} style="width:100%"/>
         <TextField type="text" label="Mental stress title" enabled={!my_dials.useSingleStressTrack} bind:value={my_dials.mentalStressTitle} style="width:100%"/>
